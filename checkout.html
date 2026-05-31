@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Brew Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Brew Haven ☕</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">
+    Cart (<span id="cartCount">0</span>)
+</a>
+    </nav>
+</header>
+
+<section class="checkout-banner">
+
+    <h1>Checkout</h1>
+
+    <p>
+        Complete your order and enjoy Brew Haven coffee.
+    </p>
+
+</section>
+
+<section class="checkout-container">
+
+    <div class="checkout-form">
+
+        <h2>Customer Information</h2>
+
+        <input type="text"
+               id="customerName"
+               placeholder="Full Name">
+
+        <input type="email"
+               id="customerEmail"
+               placeholder="Email Address">
+
+        <input type="text"
+               id="customerPhone"
+               placeholder="Phone Number">
+
+        <h2>Delivery Address</h2>
+
+        <input type="text"
+               id="houseNumber"
+               placeholder="House/Unit Number">
+        <input type="text"
+               id="street"
+               placeholder="Street Name">
+        <input type="text"
+               id="barangay"
+               placeholder="Barangay">
+        <input type="text"
+            id="city"
+            placeholder="City/Municipality">
+        <input type="text"
+            id="province"
+            placeholder="Province">
+        <input type="text"
+            id="zipCode"
+            placeholder="ZIP Code">
+        <input type="text"
+            id="landmark"
+            placeholder="Nearest Landmark (optional)">
+
+        <h2>Payment Method</h2>
+
+        <select id="paymentMethod" onchange="togglePaymentField()">
+
+            <option value="">Select Payment Method</option>
+
+            <option>Cash on Delivery</option>
+                Cash on Delivery
+
+            <option>GCash</option>
+                GCash
+
+            <option>Maya</option>
+                Maya
+            <option>Debit/Credit Card</option>
+                Debit/Credit Card
+            
+        </select>
+
+        <div id="mobileWalletSection" style="display:none;">
+
+            <input type="text"
+                   id="walletNumber"
+                   placeholder="Enter GCash/Maya Number">
+    </div>
+
+        <div id="cardSection" style="display:none;">
+
+            <input type="text"
+                   id="cardName"
+                   placeholder="Name on Card">
+
+            <input type="text"
+                   id="cardNumber"
+                   placeholder="Card Number">
+
+            <input type="text"
+                   id="expiryDate"
+                   placeholder="MM/YY">
+
+            <input type="text"
+                   id="cvv"
+                   placeholder="CVV">
+    </div>
+
+    </div>
+
+    <div class="receipt-card">
+
+        <h2>Order Summary</h2>
+
+        <div id="receiptItems"></div>
+
+        <hr>
+
+        <p>
+            Subtotal:
+            <span id="receiptSubtotal">₱0</span>
+        </p>
+
+        <p>
+            Delivery Fee:
+            <span id="receiptDelivery">₱0</span>
+        </p>
+
+        <h3>
+            Total:
+            <span id="receiptTotal">₱0</span>
+        </h3>
+
+        <button onclick="placeOrder()">
+            Place Order
+        </button>
+
+    </div>
+
+</section>
+
+<script>
+function togglePaymentField(){
+
+    const paymentMethod =
+    document.getElementById("paymentMethod").value;
+
+    const walletSection =
+    document.getElementById("mobileWalletSection");
+
+    const cardSection =
+    document.getElementById("cardSection");
+
+    if(
+        paymentMethod === "GCash" ||
+        paymentMethod === "Maya"
+    ){
+
+        walletSection.style.display = "block";
+        cardSection.style.display = "none";
+
+    }
+
+    else if(
+        paymentMethod === "Debit/Credit Card"
+    ){
+
+        walletSection.style.display = "none";
+        cardSection.style.display = "block";
+
+    }
+
+    else{
+
+        walletSection.style.display = "none";
+        cardSection.style.display = "none";
+
+    }
+}
+
+const cart =
+JSON.parse(
+    localStorage.getItem("cart")
+) || [];
+
+const receiptItems =
+document.getElementById(
+    "receiptItems"
+);
+
+let subtotal = 0;
+
+cart.forEach(item => {
+
+    subtotal += Number(item.price);
+
+    receiptItems.innerHTML += `
+        <div class="cart-item">
+            <span>${item.name}</span>
+            <span>₱${item.price}</span>
+        </div>
+    `;
+});
+
+let deliveryFee = 0;
+
+if(cart.length > 0){
+    deliveryFee = 50;
+}
+
+document.getElementById(
+    "receiptSubtotal"
+).textContent =
+"₱" + subtotal;
+
+document.getElementById(
+    "receiptDelivery"
+).textContent =
+"₱" + deliveryFee;
+
+document.getElementById(
+    "receiptTotal"
+).textContent =
+"₱" + (subtotal + deliveryFee);
+
+function placeOrder(){
+
+    const customerName =
+    document.getElementById("customerName").value;
+
+    if(customerName === ""){
+
+        alert("Please enter your name.");
+        return;
+    }
+
+    const orderNumber =
+    "BH" + Date.now();
+
+    const orderData = {
+
+        orderNumber: orderNumber,
+
+        customerName: customerName,
+
+        paymentMethod:
+        document.getElementById(
+            "paymentMethod"
+        ).value,
+
+        cart: cart,
+
+        subtotal: subtotal,
+
+        deliveryFee: deliveryFee,
+
+        total:
+        subtotal + deliveryFee,
+
+        date:
+        new Date().toLocaleString()
+    };
+
+    let loyaltyPoints =
+Number(
+    localStorage.getItem(
+        "brewHavenPoints"
+    )
+) || 0;
+
+loyaltyPoints +=
+Math.floor(
+    (subtotal + deliveryFee) / 10
+);
+
+localStorage.setItem(
+    "brewHavenPoints",
+    loyaltyPoints
+);
+
+    localStorage.setItem(
+        "brewHavenReceipt",
+        JSON.stringify(orderData)
+    );
+
+    localStorage.removeItem("cart");
+
+    window.location.href =
+    "receipt.html";
+}
+
+</script>
+
+<footer>
+    <p>© 2026 Brew Haven Coffee Shop</p>
+</footer>
+
+<script>
+
+function updateCartCount(){
+
+    const cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+    if(cartCount){
+
+        cartCount.textContent =
+        cart.length;
+
+    }
+}
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>

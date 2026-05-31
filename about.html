@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Brew Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Brew Haven ☕</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="cart.html">
+    Cart (<span id="cartCount">0</span>)
+</a>
+</nav>
+
+</header>
+
+<section class="about-banner">
+    <h1>About Brew Haven</h1>
+    <p>Brewing exceptional coffee and unforgettable moments.</p>
+</section>
+
+<section class="about-content">
+
+<h2>Our Story</h2>
+
+<p>
+    Brew Haven was founded with a simple goal: to create a welcoming
+    space where coffee lovers can enjoy high-quality beverages in a
+    warm and relaxing environment.
+</p>
+
+<p>
+    What started as a passion for coffee has grown into a destination
+    where customers can work, connect with friends, and enjoy expertly
+    crafted drinks made from carefully selected coffee beans.
+</p>
+
+</section>
+
+<section class="mission-vision">
+
+<div class="mv-card">
+    <h2>Our Mission</h2>
+
+    <p>
+        To serve exceptional coffee while creating memorable experiences
+        and meaningful connections for every customer.
+    </p>
+</div>
+
+<div class="mv-card">
+    <h2>Our Vision</h2>
+
+    <p>
+        To become a trusted neighborhood coffee destination known for
+        quality, hospitality, and community engagement.
+    </p>
+</div>
+
+<section class="coffee-passion">
+
+    <h2>Why We Love Coffee</h2>
+
+    <p>
+        Coffee is more than just a beverage—it's a daily ritual,
+        a source of inspiration, and a way to bring people together.
+        At Brew Haven, every cup is crafted with care to deliver
+        comfort, quality, and connection.
+    </p>
+
+</section>
+
+<section class="journey">
+
+    <h2>Our Journey</h2>
+
+    <div class="journey-card">
+        <h3>2023</h3>
+        <p>Brew Haven was founded with a passion for quality coffee.</p>
+    </div>
+
+    <div class="journey-card">
+        <h3>2024</h3>
+        <p>Expanded our menu and introduced specialty beverages.</p>
+    </div>
+
+    <div class="journey-card">
+        <h3>2025</h3>
+        <p>Reached hundreds of satisfied customers.</p>
+    </div>
+
+</section>
+
+</section>
+
+<section class="values">
+
+<h2>Our Core Values</h2>
+
+<div class="values-grid">
+
+    <div class="value-card">
+        <h3>☕ Quality</h3>
+        <p>We use carefully selected ingredients and premium coffee beans.</p>
+    </div>
+
+    <div class="value-card">
+        <h3>❤️ Community</h3>
+        <p>We believe coffee brings people together.</p>
+    </div>
+
+    <div class="value-card">
+        <h3>🌱 Sustainability</h3>
+        <p>We support responsible sourcing and environmentally friendly practices.</p>
+    </div>
+
+</div>
+
+</section>
+
+<section class="team-section">
+
+<h2>Meet Our Team</h2>
+
+<div class="team-grid">
+
+    <div class="team-card">
+        <h3>Maria Santos</h3>
+        <p>Founder & Head Barista</p>
+    </div>
+
+    <div class="team-card">
+        <h3>John Cruz</h3>
+        <p>Coffee Specialist</p>
+    </div>
+
+    <div class="team-card">
+        <h3>Ana Reyes</h3>
+        <p>Customer Experience Manager</p>
+    </div>
+
+</div>
+
+</section>
+
+<section class="visit-us">
+
+    <h2>Visit Brew Haven Today</h2>
+
+    <p>
+        Experience handcrafted coffee, warm hospitality,
+        and a welcoming atmosphere.
+    </p>
+
+    <a href="products.html">
+        <button>Explore Our Menu</button>
+    </a>
+
+</section>
+
+<footer>
+    <p>© 2026 Brew Haven Coffee Shop</p>
+</footer>
+
+<script>
+
+function updateCartCount(){
+
+    const cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+    if(cartCount){
+
+        cartCount.textContent =
+        cart.length;
+
+    }
+}
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>

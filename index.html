@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Brew Haven ☕</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="profile.html">Profile</a>
+    <a href="cart.html">
+    Cart (<span id="cartCount">0</span>)
+</a>
+    
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>BREW HAVEN</h1>
+
+<h2>Fresh Coffee, Fresh Moments</h2>
+
+<p>
+    Welcome to Brew Haven, your neighborhood coffee destination.
+    We serve handcrafted espresso drinks, premium coffee beans,
+    and freshly brewed beverages made from carefully selected ingredients.
+</p>
+
+<a href="products.html">
+    <button>Shop Now</button>
+</a>
+
+</section>
+
+<section class="featured">
+
+<h2>Customer Favorites</h2>
+
+<div class="featured-grid">
+
+    <div class="feature-card">
+        <h3>Espresso ☕</h3>
+        <p>Rich and bold coffee shot with a smooth finish.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Latte 🥛</h3>
+        <p>Espresso blended with creamy steamed milk.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Cold Brew ❄️</h3>
+        <p>Refreshing coffee brewed slowly for maximum flavor.</p>
+    </div>
+
+</div>
+
+</section>
+
+<section class="why-us">
+
+<h2>The Brew Haven Difference</h2>
+
+<div class="feature-row">
+
+    <div class="why-card">
+        <h3>🌱 Premium Beans</h3>
+        <p>
+            Carefully sourced coffee beans from trusted farms.
+        </p>
+    </div>
+
+    <div class="why-card">
+        <h3>☕ Handcrafted Drinks</h3>
+        <p>
+            Every cup is prepared fresh by passionate baristas.
+        </p>
+    </div>
+
+    <div class="why-card">
+        <h3>🚚 Fast Service</h3>
+        <p>
+            Quick preparation and delivery for maximum freshness.
+        </p>
+    </div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+    <h2>10,000+</h2>
+    <p>Cups Served</p>
+</div>
+
+<div class="stat">
+    <h2>500+</h2>
+    <p>Happy Customers</p>
+</div>
+
+<div class="stat">
+    <h2>15</h2>
+    <p>Coffee Varieties</p>
+</div>
+
+</section>
+
+<section class="about-home">
+
+<h2>About Us</h2>
+
+<p>
+    Brew Haven was established to provide high-quality coffee and a comfortable environment where customers can relax, work, and connect with others.
+</p>
+
+<p>
+    Our mission is to serve exceptional coffee while creating memorable experiences for every guest.
+</p>
+
+</section>
+
+<section class="gallery">
+
+<h2>Gallery</h2>
+
+<div class="gallery-grid">
+
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600" alt="Coffee Shop">
+
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600" alt="Coffee Cup">
+
+    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?w=600" alt="Coffee Beans">
+
+</div>
+
+</section>
+
+<section class="reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="review-card">
+    <p>⭐⭐⭐⭐⭐</p>
+    <p>"The best latte I've ever had!"</p>
+    <strong>- Sarah M.</strong>
+</div>
+
+<div class="review-card">
+    <p>⭐⭐⭐⭐⭐</p>
+    <p>"Amazing coffee and excellent service."</p>
+    <strong>- John D.</strong>
+</div>
+
+</section>
+
+<footer>
+    <p>© 2026 Brew Haven Coffee Shop</p>
+</footer>
+
+<script>
+
+function updateCartCount(){
+
+    const cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+    if(cartCount){
+
+        cartCount.textContent =
+        cart.length;
+
+    }
+}
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>

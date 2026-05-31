@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Brew Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Brew Haven ☕</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="cart.html">
+    Cart (<span id="cartCount">0</span>)
+</a>
+</nav>
+
+</header>
+
+<section class="shop-banner">
+
+<h1>Our Menu</h1>
+
+<p>
+    Explore our handcrafted coffee, refreshing beverages,
+    and freshly baked pastries.
+</p>
+
+</section>
+
+<section class="menu-category">
+
+<div class="search-container">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search coffee or pastries..."
+        onkeyup="searchProducts()">
+
+</div>
+
+<h2>☕ Hot Coffee</h2>
+
+<div class="products">
+
+<div class="card product-card">
+    <img src="images/espresso.jpg" alt="Espresso">
+
+<h3>Espresso</h3>
+
+<select id="espressoSize">
+    <option value="120">Small - ₱120</option>
+    <option value="140">Medium - ₱140</option>
+    <option value="160">Large - ₱160</option>
+</select>
+
+<br><br>
+
+<button onclick="addSizedProduct('Espresso','espressoSize')">
+    Add to Cart
+</button>
+
+</div>
+
+<div class="card product-card">
+    <img src="images/hotlatte.jpg" alt="Latte">
+
+<h3>Latte</h3>
+
+<select id="latteSize">
+    <option value="150">Small - ₱150</option>
+    <option value="170">Medium - ₱170</option>
+    <option value="190">Large - ₱190</option>
+</select>
+
+<br><br>
+
+<button onclick="addSizedProduct('Latte','latteSize')">
+    Add to Cart
+</button>
+
+</div>
+
+<div class="card product-card">
+    <img src="images/hotcappuccino.jpg" alt="Cappuccino">
+
+<h3>Cappuccino</h3>
+
+<select id="cappuccinoSize">
+    <option value="160">Small - ₱160</option>
+    <option value="180">Medium - ₱180</option>
+    <option value="200">Large - ₱200</option>
+</select>
+
+<br><br>
+
+<button onclick="addSizedProduct('Cappuccino','cappuccinoSize')">
+    Add to Cart
+</button>
+
+</div>
+
+<div class="card product-card">
+    <img src="images/hotamericano.jpg" alt="Americano">
+
+    <h3>Americano</h3>
+
+    <select id="americanoSize">
+        <option value="130">Small - ₱130</option>
+        <option value="150">Medium - ₱150</option>
+        <option value="170">Large - ₱170</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addSizedProduct('Americano','americanoSize')">
+        Add to Cart
+    </button>
+</div>
+
+<div class="card product-card">
+    <img src="images/hotmocha.jpg" alt="Mocha">
+
+    <h3>Mocha</h3>
+
+    <select id="mochaSize">
+        <option value="180">Small - ₱180</option>
+        <option value="200">Medium - ₱200</option>
+        <option value="220">Large - ₱220</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addSizedProduct('Mocha','mochaSize')">
+        Add to Cart
+    </button>
+</div>
+
+<div class="card product-card">
+    <img src="images/caramelmacchiato.jpg" alt="Caramel Macchiato">
+
+    <h3>Caramel Macchiato ⭐</h3>
+
+    <select id="macchiatoSize">
+        <option value="190">Small - ₱190</option>
+        <option value="210">Medium - ₱210</option>
+        <option value="230">Large - ₱230</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addSizedProduct('Caramel Macchiato','macchiatoSize')">
+        Add to Cart
+    </button>
+</div>
+
+</section>
+
+<section class="menu-category">
+
+<h2>🧊 Cold Drinks</h2>
+
+<div class="products">
+
+<div class="card product-card">
+    <img src="images/coldbrew.jpg" alt="Cold Brew">
+
+<h3>Cold Brew</h3>
+
+<select id="coldbrewSize">
+    <option value="180">Regular - ₱180</option>
+    <option value="210">Large - ₱210</option>
+</select>
+
+<br><br>
+
+<button onclick="addSizedProduct('Cold Brew','coldbrewSize')">
+    Add to Cart
+</button>
+
+</div>
+
+<div class="card product-card">
+    <img src="images/icedlatte.jpg" alt="Iced Latte">
+
+<h3>Iced Latte</h3>
+
+<select id="icedlatteSize">
+    <option value="170">Regular - ₱170</option>
+    <option value="200">Large - ₱200</option>
+</select>
+
+<br><br>
+
+<button onclick="addSizedProduct('Iced Latte','icedlatteSize')">
+    Add to Cart
+</button>
+
+</div>
+
+<div class="card product-card">
+    <img src="images/matchalatte.jpg" alt="Matcha Latte">
+
+<h3>Matcha Latte</h3>
+
+<select id="matchaSize">
+    <option value="210">Regular - ₱210</option>
+    <option value="240">Large - ₱240</option>
+</select>
+
+<br><br>
+
+<button onclick="addSizedProduct('Matcha Latte','matchaSize')">
+    Add to Cart
+</button>
+
+</div>
+
+<div class="card product-card">
+    <img src="images/caramelfrappe.jpg" alt="Caramel Frappe">
+
+    <h3>Caramel Frappé ⭐</h3>
+
+    <select id="frappeSize">
+        <option value="220">Regular - ₱220</option>
+        <option value="250">Large - ₱250</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addSizedProduct('Caramel Frappe','frappeSize')">
+        Add to Cart
+    </button>
+</div>
+
+<div class="card product-card">
+    <img src="images/strawberrysmoothie.jpg" alt="Strawberry Smoothie">
+
+    <h3>Strawberry Smoothie</h3>
+
+    <select id="smoothieSize">
+        <option value="190">Regular - ₱190</option>
+        <option value="220">Large - ₱220</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addSizedProduct('Strawberry Smoothie','smoothieSize')">
+        Add to Cart
+    </button>
+</div>
+
+<div class="card product-card">
+    <img src="images/icedchocolate.jpg" alt="Iced Chocolate">
+
+    <h3>Iced Chocolate</h3>
+
+    <select id="chocoSize">
+        <option value="180">Regular - ₱180</option>
+        <option value="210">Large - ₱210</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addSizedProduct('Iced Chocolate','chocoSize')">
+        Add to Cart
+    </button>
+</div>
+
+</section>
+
+<section class="menu-category">
+
+<h2>🥐 Fresh Pastries</h2>
+
+<div class="products">
+
+    <div class="card product-card">
+        <img src="images/croissant.jpg">
+        <h3>Croissant</h3>
+        <p>₱95</p>
+        <button onclick="addProduct('Croissant',95)">Add to Cart</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="images/chocolatemuffin.jpg"
+        <h3>Chocolate Muffin</h3>
+        <p>₱110</p>
+        <button onclick="addProduct('Chocolate Muffin',110)">Add to Cart</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="images/blueberrycheesecake.jpg"
+        <h3>Blueberry Cheesecake</h3>
+        <p>₱180</p>
+        <button onclick="addProduct('Blueberry Cheesecake',180)">Add to Cart</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="images/cinnamonroll.jpg" alt="Cinnamon Roll">
+        <h3>Cinnamon Roll</h3>
+        <p>₱120</p>
+        <button onclick="addProduct('Cinnamon Roll',120)">Add to Cart</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="images/bananabread.jpg" alt="Banana Bread">
+        <h3>Banana Bread</h3>
+        <p>₱100</p>
+        <button onclick="addProduct('Banana Bread',100)">Add to Cart</button>
+    </div>
+
+    <div class="card product-card">
+        <img src="images/chocolatecookie.jpg" alt="Chocolate Cookie">
+        <h3>Chocolate Cookie</h3>
+        <p>₱75</p>
+        <button onclick="addProduct('Chocolate Cookie',75)">Add to Cart</button>
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+    <p>© 2026 Brew Haven Coffee Shop</p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+
+function updateCartCount(){
+
+    const cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+    if(cartCount){
+
+        cartCount.textContent =
+        cart.length;
+
+    }
+}
+
+updateCartCount();
+
+</script>
+
+<script>
+
+function searchProducts(){
+
+    const searchValue =
+    document.getElementById(
+        "searchInput"
+    ).value.toLowerCase();
+
+    const products =
+    document.querySelectorAll(
+        ".product-card"
+    );
+
+    products.forEach(product => {
+
+        const productName =
+        product.textContent
+        .toLowerCase();
+
+        if(
+            productName.includes(
+                searchValue
+            )
+        ){
+
+            product.style.display =
+            "block";
+
+        }else{
+
+            product.style.display =
+            "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>

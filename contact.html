@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Brew Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Brew Haven ☕</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">
+    Cart (<span id="cartCount">0</span>)
+</a>
+    </nav>
+</header>
+
+<section class="contact-banner">
+
+    <h1>Contact Brew Haven</h1>
+
+    <p>
+        We'd love to hear from you.
+        Send us a message or visit our café.
+    </p>
+
+</section>
+
+<section class="contact-container">
+
+    <div class="contact-form">
+
+        <h2>Send Us a Message</h2>
+
+        <form>
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <input type="text" placeholder="Subject">
+
+            <textarea rows="6" placeholder="Your Message"></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+    <div class="contact-info">
+
+        <h2>Store Information</h2>
+
+        <p><strong>📍 Address:</strong><br>
+        Brew Haven Café<br>
+        Taguig City, Philippines</p>
+
+        <p><strong>📞 Phone:</strong><br>
+        +63 912 345 6789</p>
+
+        <p><strong>📧 Email:</strong><br>
+        hello@brewhaven.com</p>
+
+    </div>
+
+</section>
+
+<section class="hours-section">
+
+    <h2>Business Hours</h2>
+
+    <div class="hours-card">
+
+        <p>Monday - Friday: 7:00 AM - 9:00 PM</p>
+
+        <p>Saturday: 8:00 AM - 10:00 PM</p>
+
+        <p>Sunday: 8:00 AM - 8:00 PM</p>
+
+    </div>
+
+</section>
+
+<section class="map-section">
+
+    <section class="map-section">
+
+<h2>Find Us</h2>
+
+<div class="map-placeholder">
+
+    <h3>📍 Brew Haven Coffee Shop</h3>
+
+    <p>
+        125 Coffee Street,<br>
+        Brew District,<br>
+        Taguig City, Metro Manila,<br>
+        Philippines 1630
+    </p>
+
+    <p>
+        Located beside Brew District Plaza and across from Harmony Park.
+    </p>
+
+</div>
+
+</section>
+
+<section class="social-section">
+
+    <h2>Follow Us</h2>
+
+    <div class="social-links">
+
+        <a href="#">
+            📘 Facebook<br>
+            @BrewHavenCoffee
+        </a>
+
+        <a href="#">
+            📸 Instagram<br>
+            @brew_haven
+        </a>
+
+        <a href="#">
+            🎵 TikTok<br>
+            @brewhavencafe
+        </a>
+
+    </div>
+
+</section>
+
+<section class="faq-section">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-card">
+        <h3>Do you offer delivery?</h3>
+        <p>Yes! Delivery is available within selected areas.</p>
+    </div>
+
+    <div class="faq-card">
+        <h3>Do you offer free Wi-Fi?</h3>
+        <p>Yes, all customers can enjoy complimentary Wi-Fi.</p>
+    </div>
+
+    <div class="faq-card">
+        <h3>Can I reserve seats?</h3>
+        <p>Yes, reservations are accepted for small groups.</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Brew Haven Coffee Shop</p>
+</footer>
+
+<script>
+
+function logoutUser(){
+}
+
+function updateCartCount(){
+
+    const cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+    if(cartCount){
+
+        cartCount.textContent =
+        cart.length;
+
+    }
+}
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>

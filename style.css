@@ -1,0 +1,810 @@
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f4ede4;
+color:#333;
+}
+
+header{
+background:#4b2e2e;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+nav{
+margin-top:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+.hero{
+background-image:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600');
+
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:140px 20px;
+
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:10px;
+}
+
+.hero h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+button{
+background:#4b2e2e;
+color:white;
+border:none;
+padding:14px 28px;
+border-radius:6px;
+cursor:pointer;
+font-size:16px;
+}
+
+button:hover
+
+.featured,
+.why-us,
+.about-home,
+.gallery,
+.reviews{
+padding:80px 20px;
+text-align:center;
+}
+
+.featured h2{
+    text-align:center;
+    width:100%;
+    display:block;
+    margin-bottom:40px;
+    color:#4b2e2e;
+    font-size:36px;
+}
+
+.featured h2,
+.why-us h2,
+.about-home h2,
+.gallery h2,
+.reviews h2{
+color:#4b2e2e;
+font-size:36px;
+margin-bottom:40px;
+}
+
+.featured-grid,
+.feature-row{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.feature-card,
+.why-card{
+background:white;
+width:280px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.about-home{
+max-width:900px;
+margin:auto;
+background:white;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.about-home p{
+line-height:1.8;
+}
+
+.stats{
+background:#4b2e2e;
+color:white;
+display:flex;
+justify-content:center;
+gap:100px;
+padding:60px 20px;
+flex-wrap:wrap;
+}
+
+.stat h2{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.gallery-grid{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.gallery-grid img{
+width:320px;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.review-card{
+background:white;
+max-width:500px;
+margin:20px auto;
+padding:25px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+footer{
+background:#4b2e2e;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+.about-banner{
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1600');
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    text-align:center;
+    padding:140px 20px;
+}
+
+.about-banner h1{
+    font-size:56px;
+    margin-bottom:15px;
+}
+
+.about-banner p{
+    font-size:22px;
+}
+
+.about-content{
+max-width:900px;
+margin:60px auto;
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.about-content h2{
+color:#4b2e2e;
+text-align:center;
+}
+
+.about-content p{
+line-height:1.8;
+}
+
+.mission-vision{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+padding:40px 20px;
+}
+
+.mv-card{
+background:white;
+width:400px;
+padding:30px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+text-align:center;
+}
+
+.values{
+padding:60px 20px;
+text-align:center;
+}
+
+.values-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.value-card{
+background:white;
+width:280px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.team-section{
+padding:60px 20px;
+text-align:center;
+}
+
+.team-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.team-card{
+background:white;
+width:250px;
+padding:25px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.coffee-passion{
+    max-width:900px;
+    margin:60px auto;
+    background:#4b2e2e;
+    color:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.journey{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.journey-card{
+    background:white;
+    max-width:700px;
+    margin:20px auto;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.visit-us{
+    background:#6f4e37;
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.shop-banner{
+background-image:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1600');
+
+background-size:cover;
+background-position:center;
+text-align:center;
+color:white;
+padding:120px 20px;
+
+}
+
+.shop-banner h1{
+font-size:56px;
+}
+
+.menu-category{
+padding:60px 20px;
+text-align:center;
+}
+
+.menu-category h2{
+color:#4b2e2e;
+margin-bottom:30px;
+font-size:36px;
+}
+
+.products{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:300px;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h3{
+color:#4b2e2e;
+margin-top:15px;
+}
+
+.card p{
+font-weight:bold;
+}
+
+.card button{
+margin-bottom:20px;
+}
+
+.card select{
+width:80%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+margin-bottom:15px;
+}
+
+.contact-banner{
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600');
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    text-align:center;
+    padding:120px 20px;
+}
+
+.contact-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    padding:80px 20px;
+}
+
+.contact-form,
+.contact-info{
+    background:white;
+    padding:30px;
+    width:450px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    box-sizing:border-box;
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.hours-section,
+.map-section,
+.social-section,
+.faq-section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.hours-card,
+.map-placeholder{
+    max-width:700px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    background:white;
+    padding:25px;
+    width:220px;
+    text-decoration:none;
+    color:#4b2e2e;
+    font-weight:bold;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+    transition:transform .3s;
+}
+
+.social-links a:hover{
+    transform:translateY(-5px);
+}
+
+.faq-card{
+    max-width:700px;
+    margin:20px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.login-page{
+
+background-image:
+linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+),
+url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600');
+
+background-size:cover;
+background-position:center;
+min-height:80vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:50px 20px;
+
+}
+
+.login-card{
+
+    background:white;
+    width:500px;
+    max-width:90%;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.login-card h2{
+color:#4b2e2e;
+}
+
+.login-card p{
+margin-bottom:25px;
+}
+
+.login-card input{
+    width:100%;
+    box-sizing:border-box;
+    padding:14px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.login-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:20px 0;
+}
+
+.login-options label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.login-options input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    margin:0;
+}
+
+
+.login-card button{
+width:100%;
+padding:15px;
+}
+
+.guest-btn{
+background:#8b6b5c;
+margin-top:10px;
+}
+
+.register-link{
+margin-top:20px;
+}
+
+.register-link{
+    text-align:center;
+    margin-top:25px;
+    font-size:18px;
+}
+
+.cart-banner{
+    background:linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
+    ),
+    url('images/espresso.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    text-align:center;
+
+    padding:100px 20px;
+}
+
+.cart-container{
+    padding:60px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.cart-card{
+    background:white;
+    width:800px;
+    max-width:95%;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.cart-card h2{
+    text-align:center;
+    color:#4b2e2e;
+    margin-bottom:30px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-summary{
+    margin-top:25px;
+}
+
+.cart-summary p,
+.cart-summary h3{
+    display:flex;
+    justify-content:space-between;
+    margin:15px 0;
+}
+
+.cart-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.checkout-btn{
+    background:#8b6b5c;
+}
+
+.cart-quote{
+    text-align:center;
+    margin-top:30px;
+    font-style:italic;
+    color:#666;
+}
+
+.empty-cart{
+    text-align:center;
+    padding:30px;
+}
+
+.checkout-banner{
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.5),
+        rgba(0,0,0,.5)
+    ),
+    url('images/espresso.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    text-align:center;
+
+    padding:100px 20px;
+}
+
+.checkout-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    padding:60px 20px;
+}
+
+.checkout-form,
+.receipt-card{
+    width:400px;
+    text-align:center;
+}
+
+.receipt-card h2{
+    margin-bottom:30px;
+}
+
+.receipt-card hr{
+    margin:20px 0;
+}
+
+.receipt-card button{
+    width:100%;
+    margin-top:25px;
+}
+
+.checkout-form{
+    width:550px;
+}
+
+.receipt-card{
+    width:350px;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select{
+    width:100%;
+    box-sizing:border-box;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.receipt-card h2{
+    text-align:center;
+    color:#4b2e2e;
+}
+
+.receipt-card p,
+.receipt-card h3{
+    display:flex;
+    justify-content:space-between;
+    margin:15px 0;
+}
+
+#cardSection{
+    margin-top:15px;
+}
+
+#cardSection input{
+    width:100%;
+    box-sizing:border-box;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+.receipt-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    background:#f5f1eb;
+}
+
+.receipt-box{
+    background:white;
+    width:600px;
+    max-width:95%;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:
+    0 8px 25px
+    rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.receipt-box h1{
+    color:#4b2e2e;
+}
+
+.receipt-box hr{
+    margin:20px 0;
+}
+
+.profile-container{
+    display:flex;
+    justify-content:center;
+    padding:60px 20px;
+}
+
+.profile-card{
+    width:700px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow: 0 8px 25px rgba(0,0,0,.15);
+}
+
+.profile-card h1{
+    color:#4b2e2e;
+}
+
+.profile-card hr{
+    margin:25px 0;
+}
+
+.search-container{
+    text-align:center;
+    margin:30px 0;
+}
+
+.search-container{
+    text-align:center;
+    margin:30px 0;
+}
+
+.search-container input{
+    width:400px;
+    max-width:90%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    font-size:16px;
+    outline:none;
+}
+
+.search-container input:focus{
+    border-color:#5a3434;
+}

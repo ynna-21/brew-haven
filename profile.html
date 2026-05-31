@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Brew Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Brew Haven ☕</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="profile.html">Profile</a>
+        <a href="cart.html">
+            Cart (<span id="cartCount">0</span>)
+        </a>
+    </nav>
+</header>
+
+<section class="profile-container">
+
+    <div class="profile-card">
+
+        <h1>👤 My Profile</h1>
+
+        <div id="profileInfo"></div>
+
+        <div class="profile-actions">
+
+            <button onclick="logoutUser()">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const user =
+JSON.parse(
+    localStorage.getItem(
+        "brewHavenUser"
+    )
+);
+
+const receipt =
+JSON.parse(
+    localStorage.getItem(
+        "brewHavenReceipt"
+    )
+);
+
+let loyaltyPoints =
+Number(
+    localStorage.getItem(
+        "brewHavenPoints"
+    )
+) || 0;
+
+let html = "";
+
+if(user){
+
+    html += `
+
+        <h2>${user.fullName}</h2>
+
+        <p>
+            📧 ${user.email}
+        </p>
+
+        <p>
+            ☕ Brew Haven Member
+        </p>
+
+        <hr>
+
+        <h3>⭐ Loyalty Rewards</h3>
+
+        <p>
+            Current Points:
+            <strong>${loyaltyPoints}</strong>
+        </p>
+
+        <p>
+            Earn 1 point for every ₱10 spent.
+        </p>
+
+        <p>
+            Next Reward:
+            FREE Latte at 200 Points
+        </p>
+
+        <progress
+            value="${loyaltyPoints}"
+            max="200">
+        </progress>
+
+    `;
+}
+
+if(receipt){
+
+    html += `
+
+        <hr>
+
+        <h3>📦 Latest Order</h3>
+
+        <p>
+            Order #${receipt.orderNumber}
+        </p>
+
+        <p>
+            Total:
+            ₱${receipt.total}
+        </p>
+
+        <p>
+            Payment Method:
+            ${receipt.paymentMethod}
+        </p>
+
+    `;
+}
+
+document.getElementById(
+    "profileInfo"
+).innerHTML = html;
+
+function logoutUser(){
+
+    localStorage.removeItem(
+        "brewHavenUser"
+    );
+
+    alert(
+        "You have been logged out."
+    );
+
+    window.location.href =
+    "login.html";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Brew Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Brew Haven ☕</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">
+    Cart (<span id="cartCount">0</span>)
+</a>
+    </nav>
+</header>
+
+<section class="cart-banner">
+    <h1>🛒 Your Shopping Cart</h1>
+    <p>Review your favorite coffee selections before checkout.</p>
+</section>
+
+<section class="cart-container">
+
+    <div class="cart-card">
+
+        <h2>Your Order</h2>
+
+        <div id="cartItems"></div>
+
+        <hr>
+
+        <div class="cart-summary">
+
+            <p>
+                <span>Subtotal</span>
+                <span id="subtotal">₱0</span>
+            </p>
+
+            <p>
+                <span>Delivery Fee</span>
+                <span id="deliveryFee">₱0</span>
+            </p>
+
+            <h3>
+                <span>Total</span>
+                <span id="cartTotal">₱0</span>
+            </h3>
+
+        </div>
+
+        <div class="cart-buttons">
+
+            <a href="products.html">
+                <button type="button">
+                    Continue Shopping
+                </button>
+            </a>
+
+            <a href="checkout.html">
+                <button type="button" class="checkout-btn">
+                    Proceed to Checkout
+                </button>
+            </a>
+
+        </div>
+
+        <p class="cart-quote">
+            ☕ Great coffee begins with great choices.
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Brew Haven Coffee Shop</p>
+</footer>
+
+<script>
+
+const cart =
+JSON.parse(localStorage.getItem("cart")) || [];
+
+const cartItems =
+document.getElementById("cartItems");
+
+let subtotal = 0;
+
+if(cart.length === 0){
+
+    cartItems.innerHTML = `
+        <div class="empty-cart">
+            <h3>🛒 Your cart is empty.</h3>
+            <p>
+                Browse our menu and discover your next favorite coffee.
+            </p>
+        </div>
+    `;
+
+}else{
+
+    cart.forEach(item => {
+
+        subtotal += Number(item.price);
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <span>${item.name}</span>
+                <span>₱${item.price}</span>
+            </div>
+        `;
+    });
+
+}
+
+let deliveryFee = 0;
+
+if(cart.length > 0){
+    deliveryFee = 50;
+}
+
+document.getElementById("subtotal").textContent =
+"₱" + subtotal;
+
+document.getElementById("deliveryFee").textContent =
+"₱" + deliveryFee;
+
+document.getElementById("cartTotal").textContent =
+"₱" + (subtotal + deliveryFee);
+
+</script>
+
+<script>
+
+function updateCartCount(){
+
+    const cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+    if(cartCount){
+
+        cartCount.textContent =
+        cart.length;
+
+    }
+}
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>

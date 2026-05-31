@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Brew Haven</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Brew Haven ☕</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="products.html">Shop</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Login</a>
+    <a href="cart.html">Cart</a>
+</nav>
+
+</header>
+
+<section class="login-page">
+
+<div class="login-card">
+
+    <h2>Create Your Account</h2>
+
+    <p>
+        Join Brew Haven and start ordering your favorite coffee.
+    </p>
+
+    <form onsubmit="registerUser(event)">
+
+        <input type="text"
+               id="fullname"
+               placeholder="Full Name"
+               required>
+
+        <input type="email"
+               id="email"
+               placeholder="Email Address"
+               required>
+
+        <input type="password"
+               id="password"
+               placeholder="Password"
+               required>
+
+        <input type="password"
+               id="confirmPassword"
+               placeholder="Confirm Password"
+               required>
+
+        <button type="submit">
+            Create Account
+        </button>
+
+    </form>
+
+    <p>
+        Already have an account?
+        <a href="login.html">Login Here</a>
+    </p>
+
+</div>
+
+</section>
+
+<script>
+
+function registerUser(event){
+
+    event.preventDefault();
+
+    const fullName =
+    document.getElementById("fullname").value;
+
+    const email =
+    document.getElementById("email").value;
+
+    const password =
+    document.getElementById("password").value;
+
+    const confirmPassword =
+    document.getElementById("confirmPassword").value;
+
+    if(password !== confirmPassword){
+
+        alert("Passwords do not match.");
+
+        return;
+    }
+
+    const user = {
+        fullName,
+        email,
+        password
+    };
+
+    localStorage.setItem(
+        "brewHavenUser",
+        JSON.stringify(user)
+    );
+
+    alert("Account created successfully!");
+
+    window.location.href = "login.html";
+}
+
+</script>
+
+<footer>
+    <p>© 2026 Brew Haven Coffee Shop</p>
+</footer>
+
+</body>
+</html>
