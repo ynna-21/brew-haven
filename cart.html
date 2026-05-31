@@ -18,8 +18,8 @@
         <a href="about.html">About</a>
         <a href="products.html">Shop</a>
         <a href="contact.html">Contact</a>
-        <a href="login.html">Login</a>
-        <a href="profile.html">Profile</a>
+        <a href="login.html" id="loginLink">Login</a>
+        <a href="profile.html" id="profileLink">Profile</a>
         <a href="cart.html">
     Cart (<span id="cartCount">0</span>)
 </a>
@@ -100,35 +100,39 @@ let subtotal = 0;
 
 if(cart.length === 0){
 
-    cartItems.innerHTML = `
-        <div class="empty-cart">
-            <h3>🛒 Your cart is empty.</h3>
-            <p>
-                Browse our menu and discover your next favorite coffee.
-            </p>
-        </div>
-    `;
+cartItems.innerHTML = `
+    <div class="empty-cart">
+        <h3>🛒 Your cart is empty.</h3>
+        <p>
+            Browse our menu and discover your next favorite coffee.
+        </p>
+    </div>
+`;
 
 }else{
 
-    cart.forEach(item => {
+cart.forEach((item, index) => {
 
-        subtotal += Number(item.price);
+    subtotal += Number(item.price);
 
-        cartItems.innerHTML += `
-            <div class="cart-item">
-                <span>${item.name}</span>
-                <span>₱${item.price}</span>
-            </div>
-        `;
-    });
+    cartItems.innerHTML += `
+        <div class="cart-item">
+            <span>${item.name}</span>
+            <span>₱${item.price}</span>
+            <button onclick="removeItem(${index})">
+                Remove
+            </button>
+        </div>
+    `;
+
+});
 
 }
 
 let deliveryFee = 0;
 
 if(cart.length > 0){
-    deliveryFee = 50;
+deliveryFee = 50;
 }
 
 document.getElementById("subtotal").textContent =
@@ -139,6 +143,7 @@ document.getElementById("deliveryFee").textContent =
 
 document.getElementById("cartTotal").textContent =
 "₱" + (subtotal + deliveryFee);
+
 
 </script>
 
@@ -164,7 +169,69 @@ function updateCartCount(){
     }
 }
 
+function removeItem(index){
+
+    if(
+        !confirm(
+            "Remove this item from your cart?"
+        )
+    ){
+        return;
+    }
+
+    let cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+    cart.splice(index, 1);
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    location.reload();
+}
+
 updateCartCount();
+
+</script>
+
+<script>
+
+const user =
+JSON.parse(
+    localStorage.getItem(
+        "brewHavenUser"
+    )
+);
+
+const loginLink =
+document.getElementById(
+    "loginLink"
+);
+
+const profileLink =
+document.getElementById(
+    "profileLink"
+);
+
+if(user){
+
+    if(loginLink){
+        loginLink.style.display =
+        "none";
+    }
+
+}else{
+
+    if(profileLink){
+        profileLink.style.display =
+        "none";
+    }
+
+}
 
 </script>
 

@@ -19,8 +19,8 @@
     <a href="about.html">About</a>
     <a href="products.html">Shop</a>
     <a href="contact.html">Contact</a>
-    <a href="login.html">Login</a>
-    <a href="profile.html">Profile</a>
+    <a href="login.html" id="loginLink">Login</a>
+    <a href="profile.html" id="profileLink">Profile</a>
     <a href="cart.html">
     Cart (<span id="cartCount">0</span>)
 </a>
@@ -295,14 +295,14 @@
     </div>
 
     <div class="card product-card">
-        <img src="images/chocolatemuffin.jpg"
+        <img src="images/chocolatemuffin.jpg" alt="Chocolate Muffin">
         <h3>Chocolate Muffin</h3>
         <p>₱110</p>
         <button onclick="addProduct('Chocolate Muffin',110)">Add to Cart</button>
     </div>
 
     <div class="card product-card">
-        <img src="images/blueberrycheesecake.jpg"
+        <img src="images/blueberrycheesecake.jpg" alt="Blueberry Cheesecake">
         <h3>Blueberry Cheesecake</h3>
         <p>₱180</p>
         <button onclick="addProduct('Blueberry Cheesecake',180)">Add to Cart</button>
@@ -404,6 +404,43 @@ function searchProducts(){
         }
 
     });
+
+}
+
+</script>
+
+<script>
+
+const user =
+JSON.parse(
+    localStorage.getItem(
+        "brewHavenUser"
+    )
+);
+
+const loginLink =
+document.getElementById(
+    "loginLink"
+);
+
+const profileLink =
+document.getElementById(
+    "profileLink"
+);
+
+if(user){
+
+    if(loginLink){
+        loginLink.style.display =
+        "none";
+    }
+
+}else{
+
+    if(profileLink){
+        profileLink.style.display =
+        "none";
+    }
 
 }
 

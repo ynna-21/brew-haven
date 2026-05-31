@@ -805,3 +805,16 @@ margin-top:20px;
 .search-container input:focus{
     border-color:#5a3434;
 }
+
+.cart-item button{
+    background:#c0392b;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.cart-item button:hover{
+    background:#a93226;
+}

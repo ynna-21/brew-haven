@@ -19,8 +19,8 @@
     <a href="about.html">About</a>
     <a href="products.html">Shop</a>
     <a href="contact.html">Contact</a>
-    <a href="login.html">Login</a>
-    <a href="profile.html">Profile</a>
+    <a href="login.html" id="loginLink">Login</a>
+    <a href="profile.html" id="profileLink">Profile</a>
     <a href="cart.html">Cart</a>
 </nav>
 
@@ -119,6 +119,43 @@ function registerUser(event){
 <footer>
     <p>© 2026 Brew Haven Coffee Shop</p>
 </footer>
+
+<script>
+
+const user =
+JSON.parse(
+    localStorage.getItem(
+        "brewHavenUser"
+    )
+);
+
+const loginLink =
+document.getElementById(
+    "loginLink"
+);
+
+const profileLink =
+document.getElementById(
+    "profileLink"
+);
+
+if(user){
+
+    if(loginLink){
+        loginLink.style.display =
+        "none";
+    }
+
+}else{
+
+    if(profileLink){
+        profileLink.style.display =
+        "none";
+    }
+
+}
+
+</script>
 
 </body>
 </html>
