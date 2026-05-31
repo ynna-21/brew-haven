@@ -27,10 +27,9 @@ Brew Haven is a coffee shop e-commerce website that allows customers to browse p
 
 ## Technologies Used
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
-- Local Storage API
 
 ## Author
 
