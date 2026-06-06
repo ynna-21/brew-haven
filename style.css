@@ -818,3 +818,53 @@ margin-top:20px;
 .cart-item button:hover{
     background:#a93226;
 }
+
+.reward-grid,
+.badge-grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.reward-card,
+.badge-card{
+    background:white;
+    width:180px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.order-card{
+    background:white;
+    max-width:500px;
+    margin:15px auto;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.reward-card h3{
+    color:#4b2e2e;
+}
+
+.badge-card{
+    font-weight:bold;
+}
+
+.progress-container{
+    width:300px;
+    height:18px;
+    background:#ddd;
+    border-radius:20px;
+    margin:15px auto;
+    overflow:hidden;
+}
+
+.progress-bar{
+    width:34%;
+    height:100%;
+    background:#f4c542;
+}
